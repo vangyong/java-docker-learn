@@ -52,7 +52,7 @@
 					<imageName>${project.artifactId}</imageName>
 					<baseImage>java</baseImage>
                     <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
-					<!-- <dockerDirectory>src/main/docker</dockerDirectory> -->
+					<dockerDirectory>src/main/docker</dockerDirectory>
 					<dockerHost>${dockerHost}</dockerHost>
 					<resources>
 						<resource>
