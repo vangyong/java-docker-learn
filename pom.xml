@@ -51,8 +51,9 @@
 				<configuration>
 					<imageName>${project.artifactId}</imageName>
 					<baseImage>java</baseImage>
-                    <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
-					<dockerDirectory>src/main/docker</dockerDirectory>
+                    <!-- <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint> -->
+                    <!-- 用Dockerfile构建，指定路径 -->
+					<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
 					<dockerHost>${dockerHost}</dockerHost>
 					<resources>
 						<resource>
@@ -61,7 +62,9 @@
 							<include>${project.build.finalName}.jar</include>
 						</resource>
 					</resources>
+					<!-- 与maven配置文件settings.xml一致 -->
 					<serverId>docker-registry</serverId>
+					<registryUrl>https://index.docker.io/v1/</registryUrl>
 				</configuration>
 			</plugin>
 		</plugins>
