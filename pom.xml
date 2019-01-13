@@ -13,7 +13,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<!-- <docker.image.prefix>docker-learn</docker.image.prefix> -->
+		<docker.image.prefix>springio</docker.image.prefix>
 		<dockerHost>https://cloud.docker.com</dockerHost>
 	</properties>
 
@@ -49,12 +49,12 @@
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.4.14</version>
 				<configuration>
-					<imageName>${project.artifactId}</imageName>
-					<baseImage>java</baseImage>
+					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+					<!-- <baseImage>java</baseImage> -->
                     <!-- <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint> -->
                     <!-- 用Dockerfile构建，指定路径 -->
 					<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
-					<dockerHost>${dockerHost}</dockerHost>
+					<!-- <dockerHost>${dockerHost}</dockerHost> -->
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
