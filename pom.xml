@@ -6,39 +6,23 @@
 	<groupId>cn.segema.learn</groupId>
 	<artifactId>docker-learn</artifactId>
 	<version>1.0.0</version>
-
-	<name>docker-learn</name>
-
+	<packaging>jar</packaging>
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<docker.image.prefix>springio</docker.image.prefix>
-		<dockerHost>https://cloud.docker.com</dockerHost>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!--properties节点中设置docker镜像的前缀“springboot”-->  
+        <docker.image.prefix>springio</docker.image.prefix>
+        <java.version>1.8</java.version>
 	</properties>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.3.RELEASE</version>
+		<version>2.0.2.RELEASE</version>
 		<relativePath />
 	</parent>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
+	
 	<build>
-		<finalName>docker-learn</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -48,14 +32,10 @@
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.4.14</version>
+				<version>0.4.13</version>
 				<configuration>
 					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-					<!-- <baseImage>java</baseImage> -->
-                    <!-- <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint> -->
-                    <!-- 用Dockerfile构建，指定路径 -->
 					<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
-					<!-- <dockerHost>${dockerHost}</dockerHost> -->
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
@@ -64,10 +44,23 @@
 						</resource>
 					</resources>
 					<!-- 与maven配置文件settings.xml一致 -->
-					<serverId>docker-registry</serverId>
-					<registryUrl>https://index.docker.io/v1/</registryUrl>
+					<!-- <serverId>docker-registry</serverId>
+					<registryUrl>https://index.docker.io/v1/</registryUrl> -->
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>docker-learn</finalName>
 	</build>
+	
+	 <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
