@@ -44,8 +44,8 @@
 						</resource>
 					</resources>
 					<!-- 与maven配置文件settings.xml一致 -->
-					<!-- <serverId>docker-registry</serverId>
-					<registryUrl>https://index.docker.io/v1/</registryUrl> -->
+					<serverId>docker-registry</serverId>
+					<registryUrl>https://index.docker.io/v1/</registryUrl>
 				</configuration>
 			</plugin>
 		</plugins>
