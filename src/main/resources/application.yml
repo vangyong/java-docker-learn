@@ -3,6 +3,15 @@ server:
 spring: 
   application:
     name: docker-learn
+  datasource: 
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mytest?prepStmtCacheSize=517&cachePrepStmts=true&autoReconnect=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+    hibernate: 
+      ddl-auto: update    
 
 ribbon:
   ServerListRefreshInterval: 1000
