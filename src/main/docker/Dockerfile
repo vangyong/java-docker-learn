@@ -1,4 +1,4 @@
-FROM primetoninc/jdk:1.8
+FROM java:8
 VOLUME /tmp
 ADD docker-learn.jar app.jar
 RUN sh -c 'touch /app.jar'
