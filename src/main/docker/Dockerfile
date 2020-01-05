@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-oraclejdk8:slim
+FROM primetoninc/jdk:1.8
 VOLUME /tmp
 ADD docker-learn.jar app.jar
 RUN sh -c 'touch /app.jar'
