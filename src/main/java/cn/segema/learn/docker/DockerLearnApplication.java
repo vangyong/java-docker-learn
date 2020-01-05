@@ -1,12 +1,12 @@
-package cn.segema.learn;
+package cn.segema.learn.docker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DockerDemoApplication {
+public class DockerLearnApplication {
 	
     public static void main(String[] args) {
-        SpringApplication.run(DockerDemoApplication.class, args);
+        SpringApplication.run(DockerLearnApplication.class, args);
     }
 }
