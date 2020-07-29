@@ -20,7 +20,9 @@ setting.xml
 docker-registry
 
 # 构建
-mvn package docker:build #构建
-mvn clean package docker:build -DpushImage #构建并push到仓库
+* 构建
+mvn package docker:build
+* 构建并push到仓库
+mvn clean package docker:build -DpushImage 
 
 
