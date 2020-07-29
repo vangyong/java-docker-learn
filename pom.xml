@@ -29,15 +29,14 @@
 		<dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.4</version>
             <scope>provided</scope>
         </dependency>
         
-        <dependency>
+<!--         <dependency>
 		    <groupId>com.google.guava</groupId>
 		    <artifactId>guava</artifactId>
 		    <version>27.1-jre</version>
-		</dependency>
+		</dependency> -->
         <!-- swagger2 -->
 		<dependency>
 			<groupId>io.springfox</groupId>
