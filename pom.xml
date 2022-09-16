@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>cn.segema.learn</groupId>
-	<artifactId>docker-learn</artifactId>
+	<artifactId>java-docker-learn</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 	<properties>
